@@ -1,0 +1,16 @@
+.sentence {
+  .en {
+    font-size: 20px;
+    margin-bottom: 10px;
+
+    em {
+      color: var(--red);
+      font-style: normal;
+      // opacity: 0.6;
+    }
+  }
+
+  .cn {
+    font-family: var(--font-default);
+  }
+}
