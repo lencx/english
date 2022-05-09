@@ -24,3 +24,8 @@ export const highlight = (content: string, range: string) => {
 
   return str;
 };
+
+export const getScrollPosition = (el: any = window) => ({
+  x: el.pageXOffset !== undefined ? el.pageXOffset : el.scrollLeft,
+  y: el.pageYOffset !== undefined ? el.pageYOffset : el.scrollTop,
+});

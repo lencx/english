@@ -1,4 +1,8 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
+import clsx from 'clsx';
+import { Icon } from '@iconify/react/dist/offline';
+// import translateIcon from '@iconify-icons/mdi/google-translate';
+import arrowIcon from '@iconify-icons/mdi/navigation';
 
 import { highlight } from '@utils/tools';
 import './index.scss';
@@ -12,15 +16,24 @@ interface SentenceProps {
 }
 
 const Sentence: FC<SentenceProps> = ({ data }) => {
+  const [isActive, setActive] = useState(false);
+
+  const handleToogle = () => {
+    setActive(!isActive);
+  };
+
   return (
-    <div className="sentence">
-      <div
-        className="en"
-        dangerouslySetInnerHTML={{
-          __html: highlight(data.en, data.highlight),
-        }}
-      />
-      <div className="cn">{data.cn}</div>
+    <div className={clsx('sentence', { active: isActive })}>
+      <Icon className="arrow-ico" icon={arrowIcon} onClick={handleToogle} />
+      <div>
+        <div
+          className="en"
+          dangerouslySetInnerHTML={{
+            __html: highlight(data.en, data.highlight),
+          }}
+        />
+        <div className="cn">{data.cn}</div>
+      </div>
     </div>
   );
 };

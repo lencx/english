@@ -1,7 +1,20 @@
 .sentence {
+  display: flex;
+
+  .arrow-ico {
+    transform: rotateZ(90deg);
+    color: var(--gray);
+    margin-right: 10px;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 300ms ease;
+    font-size: 24px;
+  }
+
   .en {
     font-size: 20px;
     margin-bottom: 10px;
+    font-family: var(--font-en);
 
     em {
       color: var(--red);
@@ -11,6 +24,20 @@
   }
 
   .cn {
-    font-family: var(--font-default);
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 300ms ease;
+  }
+
+  &.active {
+    .arrow-ico {
+      transform: rotateZ(180deg);
+    }
+
+    .cn {
+      opacity: 1;
+      max-height: 9999px;
+    }
   }
 }

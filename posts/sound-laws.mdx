@@ -1,0 +1,53 @@
+import Word from '@comps/Word';
+import Iter from '@comps/Iter';
+
+# 印欧语音变规律
+
+> 核心：词源不变 语音改变
+
+- 元音大推移
+- 维尔纳定律
+- R 音位移
+- 萨宾 L
+- [格林定律](https://zh.wikipedia.org/wiki/%E6%A0%BC%E6%9E%97%E5%AE%9A%E5%BE%8B)
+
+---
+
+## 互换
+
+- 元音互换
+- `g` `k` `h` 互换
+- `d` `t` `s` 互换
+- `u` `v` `w` 互换
+- `m` `n` `l` `r` 互换
+- `b` `p` `m` `f` `v` 互换
+
+### 举例
+
+### 旧词造新词
+
+<Iter
+  data={[
+    <Word en="bag" cn="袋子" highlight="1" />,
+    <Word en="big" cn="大" highlight="1" />,
+  ]}
+/>
+
+### 单数变复数不规则变化，真的不规则吗？
+
+在元音上变化产生新的单词
+
+|                单数                 |                复数                 |
+| :---------------------------------: | :---------------------------------: |
+|   <Word en="man" highlight="1" />   |   <Word en="men" highlight="1" />   |
+|  <Word en="woman" highlight="3" />  |  <Word en="women" highlight="3" />  |
+| <Word en="foot" highlight="1-3" />  | <Word en="feet" highlight="1-3" />  |
+| <Word en="tooth" highlight="1-3" /> | <Word en="teeth" highlight="1-3" /> |
+| <Word en="goose" highlight="1-3" /> | <Word en="geese" highlight="1-3" /> |
+
+### 不规则动词变化，真的也不规则吗？
+
+|       |       |       |
+| :---: | :---: | :---: |
+| drink | drank | drunk |
+| find  | found | found |
